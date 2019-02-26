@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="D:/SIAVE/Mysql_connector/mysql-connector-java-5.1.38.jar" />
+
+  <context id="SCGCatalogos" targetRuntime="MyBatis3">    
+	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/siavedyc"
+        userId="root"
+        password="admin">
+    </jdbcConnection>
+	
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+	<!-- \javaprojects\workspace\TestIbatis\src -->
+	<!-- \javaprojects\workspace\gacow96\src -->
+	
+    <javaModelGenerator targetPackage="com.siave.persistence.model" targetProject="siave">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.siave.persistence.dao"  targetProject="siave">
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+	
+	<javaClientGenerator type="XMLMAPPER" targetPackage="com.siave.persistence.dao"  targetProject="siave">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+    
+	<table tableName="catSuperCategoria">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<!-- table tableName="OYC_ACUERDO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_ACUERDO" sqlStatement="select OYC_ACUERDO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_ADMIN_USR">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_CAT_ESTATUS_ACUERDO">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_CAT_FOLIO_ORGANO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_CAT_FOLIO_ORGANO" sqlStatement="select OYC_CAT_FOLIO_ORGANO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_CAT_TIPO_DEPENCIA">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_CAT_TIPO_DOCTO">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_CAT_TIPO_ORG_COM">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_CAT_TIPO_SESION">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_COMENTARIO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_COMENTARIO" sqlStatement="select OYC_COMENTARIO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_DEP_ENT">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_DEP_ENT" sqlStatement="select OYC_DEP_ENT_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_DOCUMENTO_FIRMA">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_DOCUMENTO_FIRMA" sqlStatement="select OYC_DOCUMENTO_FIRMA_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_EJERCICIO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_EJERCICIO" sqlStatement="select OYC_EJERCICIO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_FIRMA">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_FUNCIONARIO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_FUNCIONARIO" sqlStatement="select OYC_FUNCIONARIO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_MIEMBRO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_MIEMBRO" sqlStatement="select OYC_MIEMBRO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_OPERADOR_ORGANO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_OPERADOR_ORGANO" sqlStatement="select OYC_OPERADOR_ORGANO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_OPERADOR_DEP_ENT">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_OPERADOR_DEP_ENT" sqlStatement="select OYC_OPERADOR_DEP_ENT_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_ORGANO_COMITE">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_ORGANO_COMITE" sqlStatement="select OYC_ORGANO_COMITE_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_RESPUESTA">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_RESPUESTA" sqlStatement="select OYC_RESPUESTA_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_ROL">
+      <property name="useActualColumnNames" value="true"/>
+    </table>
+	<table tableName="OYC_SESION">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_SESION" sqlStatement="select OYC_SESION_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_SOP_ACUERDO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_SOP_ACUERDO" sqlStatement="select OYC_SOP_ACUERDO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_SOP_ORGANO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_SOP_ORGANO" sqlStatement="select OYC_SOP_ORGANO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_SOPORTE_DOCUMENTAL">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_SOPORTE_DOCUMENTAL" sqlStatement="select OYC_SOPORTE_DOCUMENTAL_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_USR_HIS_PWD">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_USR_HIS_PWD" sqlStatement="select OYC_USR_HIS_PWD_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_USUARIO">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_USUARIO" sqlStatement="select OYC_USUARIO_SEQ.nextval from Dual" identity="false" />
+    </table>
+	<table tableName="OYC_USUARIO_ROL">
+      <property name="useActualColumnNames" value="true"/>
+	  <generatedKey column="ID_OYC_USUARIO_ROL" sqlStatement="select OYC_USUARIO_ROL_SEQ.nextval from Dual" identity="false" />
+    </table>
+    <table tableName="OYC_CONTROL_SESION">
+      <property name="useActualColumnNames" value="true"/>
+    </table-->
+    
+  </context>
+</generatorConfiguration>
